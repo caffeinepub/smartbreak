@@ -1,0 +1,480 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "SmartBreak one-page marketing website (sections, visuals, animations, contact form)",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Create a single-scroll, single-route page that renders all 9 SmartBreak sections in the specified order.",
+      "acceptanceCriteria": [
+        "Page renders all 9 sections in the specified order on a single scrollable route (no missing sections).",
+        "Each section has a clear heading matching the provided titles/headline text (or the exact provided Hero headline).",
+        "Layout remains readable and visually coherent across mobile, tablet, and desktop breakpoints."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/SmartBreakLandingPage.tsx",
+          "operation": "create",
+          "description": "Create the single-page landing view that composes and renders the 9 required sections in order (Hero, Problem, Our Solution, How It Works, Technology & Innovation, Simulation & Proof, Impact, About/Research Background, Contact). Use consistent section wrappers and IDs for in-page navigation."
+        },
+        {
+          "path": "frontend/src/components/marketing/SectionShell.tsx",
+          "operation": "create",
+          "description": "Create a reusable section wrapper component (container widths, spacing, background treatment, section anchor id) used by all 9 sections to ensure consistent layout and predictable scroll targets."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire the SmartBreakLandingPage into the app so it is reachable as the single scrollable route (avoid adding extra top-level pages)."
+        },
+        {
+          "path": "frontend/src/components/marketing/SiteHeader.tsx",
+          "operation": "create",
+          "description": "Create a lightweight header/navigation component for in-page jumps to the 9 sections (uses section IDs)."
+        },
+        {
+          "path": "frontend/src/pages/SmartBreakLandingPage.tsx",
+          "operation": "modify",
+          "description": "Wire SiteHeader into the landing page layout and ensure each section has a stable anchor id matching nav targets."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Apply the SmartBreak dark deep-tech theme (dark-blue base, electric-yellow accents, modern sans-serif typography) consistently across the full page.",
+      "acceptanceCriteria": [
+        "All sections consistently use the dark-blue + electric-yellow palette (no random/competing accent colors).",
+        "Typography uses a modern sans-serif system with consistent heading/body scales.",
+        "Buttons, cards, and icons share a consistent style (radius, shadows/glow, borders) across sections."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Define/adjust global theme tokens and base styles to achieve a dark-blue primary background and electric-yellow accent system, set modern sans-serif typography, and apply consistent spacing/typography scale."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind theme with SmartBreak-specific palette aliases (dark blues + electric yellow), subtle glow/shadow utilities, and any needed typography scale helpers for consistent engineering-style visuals."
+        },
+        {
+          "path": "frontend/src/components/marketing/DesignTokens.ts",
+          "operation": "create",
+          "description": "Add a small centralized constants file for reusable className strings (button variants, card styles, section backgrounds) to keep styling consistent across all sections."
+        },
+        {
+          "path": "frontend/src/components/marketing/PrimaryButton.tsx",
+          "operation": "create",
+          "description": "Compose a consistent CTA button using the shadcn-ui Button component (do not edit frontend/src/components/ui). Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/marketing/FeatureCard.tsx",
+          "operation": "create",
+          "description": "Compose a consistent card style using shadcn-ui Card primitives (do not edit frontend/src/components/ui). Verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Implement the Hero section with exact copy, two CTAs, downloadable local PDF, and a subtle animated power-grid background.",
+      "acceptanceCriteria": [
+        "Hero displays the exact headline and subheadline text.",
+        "“Request Demo” scrolls smoothly to the Contact section.",
+        "“Download Technical Brief” downloads a local static placeholder PDF from the frontend (no backend needed).",
+        "Background includes a subtle animation effect (e.g., moving grid lines/particles) without harming readability or performance."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/marketing/sections/HeroSection.tsx",
+          "operation": "create",
+          "description": "Create the Hero section with the exact headline/subheadline text, two CTA buttons, and a background layer that renders the generated hero grid image with a subtle animation overlay while maintaining readability. Use composed shadcn-ui Button for CTAs (do not edit frontend/src/components/ui). Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/public/assets/generated/hero-grid-bg.dim_1920x1080.png",
+          "operation": "create",
+          "description": "Add the generated hero background illustration asset for the hero power-grid / transmission-line look."
+        },
+        {
+          "path": "frontend/public/assets/technical-brief.pdf",
+          "operation": "create",
+          "description": "Add a local static placeholder PDF to satisfy the 'Download Technical Brief' CTA download requirement."
+        },
+        {
+          "path": "frontend/src/pages/SmartBreakLandingPage.tsx",
+          "operation": "modify",
+          "description": "Include HeroSection at the top of the page and wire the 'Download Technical Brief' CTA to the local file at frontend/public/assets/technical-brief.pdf."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Add smooth in-page scrolling and subtle on-scroll entrance animations for key elements across sections.",
+      "acceptanceCriteria": [
+        "In-page CTA jumps use smooth scrolling.",
+        "Each major section has at least one subtle entrance animation triggered on scroll/visibility.",
+        "Animations do not block interaction and remain performant on mid-range laptops and mobile devices."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useSmoothScroll.ts",
+          "operation": "create",
+          "description": "Create a small hook/utility to perform smooth scroll-to-section behavior (by element id), used by header nav and Hero CTA."
+        },
+        {
+          "path": "frontend/src/hooks/useInViewAnimation.ts",
+          "operation": "create",
+          "description": "Create an IntersectionObserver-based hook to apply entrance animation classes when elements become visible, optimized for performance."
+        },
+        {
+          "path": "frontend/src/components/marketing/AnimatedInView.tsx",
+          "operation": "create",
+          "description": "Create a wrapper component that uses useInViewAnimation to add subtle entrance animations to headings/cards/diagrams on scroll."
+        },
+        {
+          "path": "frontend/src/components/marketing/SiteHeader.tsx",
+          "operation": "modify",
+          "description": "Wire header navigation items to use useSmoothScroll for in-page section jumps."
+        },
+        {
+          "path": "frontend/src/components/marketing/sections/HeroSection.tsx",
+          "operation": "modify",
+          "description": "Wire 'Request Demo' CTA to smooth-scroll to the Contact section anchor id."
+        },
+        {
+          "path": "frontend/src/components/marketing/sections/ProblemSection.tsx",
+          "operation": "modify",
+          "description": "Apply AnimatedInView to at least the section heading and the infographic block so they animate in on scroll."
+        },
+        {
+          "path": "frontend/src/components/marketing/sections/SolutionSection.tsx",
+          "operation": "modify",
+          "description": "Apply AnimatedInView to at least the architecture diagram and bullet content."
+        },
+        {
+          "path": "frontend/src/components/marketing/sections/HowItWorksSection.tsx",
+          "operation": "modify",
+          "description": "Apply AnimatedInView to the stepper/flow container for a subtle entrance animation."
+        },
+        {
+          "path": "frontend/src/components/marketing/sections/TechnologySection.tsx",
+          "operation": "modify",
+          "description": "Apply AnimatedInView to the cards grid for subtle entrance animation."
+        },
+        {
+          "path": "frontend/src/components/marketing/sections/SimulationSection.tsx",
+          "operation": "modify",
+          "description": "Apply AnimatedInView to the waveform graphic and bullets."
+        },
+        {
+          "path": "frontend/src/components/marketing/sections/ImpactSection.tsx",
+          "operation": "modify",
+          "description": "Apply AnimatedInView to the hero/impact visual and bullet list."
+        },
+        {
+          "path": "frontend/src/components/marketing/sections/AboutSection.tsx",
+          "operation": "modify",
+          "description": "Apply AnimatedInView to the about text block."
+        },
+        {
+          "path": "frontend/src/components/marketing/sections/ContactSection.tsx",
+          "operation": "modify",
+          "description": "Apply AnimatedInView to the contact form container so it animates into view without blocking interaction."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Implement the Problem section with provided bullets and an infographic-style 3-step chain visual.",
+      "acceptanceCriteria": [
+        "Problem section heading matches the provided title.",
+        "All listed bullet points are present and readable.",
+        "Infographic-style visual clearly shows the 3-step chain with arrows in the specified order."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/marketing/sections/ProblemSection.tsx",
+          "operation": "create",
+          "description": "Create the Problem section titled exactly “The Hidden Danger in LV Distribution Networks”, render the provided bullet points, and display the infographic-style visual that communicates: Broken conductor → Live wire → Public danger."
+        },
+        {
+          "path": "frontend/public/assets/generated/problem-infographic.dim_1400x700.png",
+          "operation": "create",
+          "description": "Add the generated problem infographic asset for the 3-step chain visual."
+        },
+        {
+          "path": "frontend/src/pages/SmartBreakLandingPage.tsx",
+          "operation": "modify",
+          "description": "Wire ProblemSection into the landing page in the required order and ensure it has a stable anchor id for navigation."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Implement the Our Solution section with provided bullets and an architecture diagram in the specified node order.",
+      "acceptanceCriteria": [
+        "Solution section includes all provided bullet points.",
+        "Architecture diagram displays the 5 nodes in the specified order with arrows connecting them.",
+        "Diagram remains legible on mobile (stacks or scrolls horizontally gracefully)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/marketing/sections/SolutionSection.tsx",
+          "operation": "create",
+          "description": "Create “The SmartBreak Solution” section with the provided explanation bullets and render the architecture diagram visual: Consumer Unit → RF Communication → Transformer Control Unit → Isolation Actuator → SMS Alert, ensuring responsive behavior on mobile."
+        },
+        {
+          "path": "frontend/public/assets/generated/solution-architecture-diagram.dim_1600x900.png",
+          "operation": "create",
+          "description": "Add the generated system architecture diagram asset."
+        },
+        {
+          "path": "frontend/src/pages/SmartBreakLandingPage.tsx",
+          "operation": "modify",
+          "description": "Wire SolutionSection into the landing page in the required order and ensure it has a stable anchor id for navigation."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Implement How It Works as a 6-step horizontal flow with icons that degrades to a vertical stepper on mobile.",
+      "acceptanceCriteria": [
+        "All 6 steps appear in the correct order with icons.",
+        "On desktop the layout reads as a left-to-right flow; on mobile it degrades to a vertical stepper without losing the step order.",
+        "Icons and connectors/arrows are consistent in style with the rest of the site."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/marketing/sections/HowItWorksSection.tsx",
+          "operation": "create",
+          "description": "Create the 6-step How It Works section with the exact step text, consistent icon usage, and responsive layout (horizontal flow on desktop, vertical stepper on mobile)."
+        },
+        {
+          "path": "frontend/public/assets/generated/how-it-works-icons.dim_1024x1024.png",
+          "operation": "create",
+          "description": "Add the generated icon set asset for the How It Works steps."
+        },
+        {
+          "path": "frontend/src/pages/SmartBreakLandingPage.tsx",
+          "operation": "modify",
+          "description": "Wire HowItWorksSection into the landing page in the required order and ensure it has a stable anchor id for navigation."
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Implement Technology & Innovation as six responsive tech cards with icons and labels matching the provided highlights.",
+      "acceptanceCriteria": [
+        "Six cards are displayed, one per highlight, each with an icon and label.",
+        "Cards are responsive (grid layout adapting across breakpoints).",
+        "Card styling fits the dark-blue + electric-yellow theme and is consistent across the site."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/marketing/sections/TechnologySection.tsx",
+          "operation": "create",
+          "description": "Create Technology & Innovation section with six tech-style cards (one per provided highlight) and consistent icon treatment; compose cards using FeatureCard (built on shadcn-ui Card, do not edit frontend/src/components/ui). Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/public/assets/generated/tech-feature-icons.dim_1024x1024.png",
+          "operation": "create",
+          "description": "Add the generated icon set asset for the Technology & Innovation cards."
+        },
+        {
+          "path": "frontend/src/pages/SmartBreakLandingPage.tsx",
+          "operation": "modify",
+          "description": "Wire TechnologySection into the landing page in the required order and ensure it has a stable anchor id for navigation."
+        }
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "summary": "Implement Simulation & Proof section with “MATLAB Simulation Results”, provided bullets, and a waveform-style graphic placeholder.",
+      "acceptanceCriteria": [
+        "Section heading includes “MATLAB Simulation Results”.",
+        "All simulation bullet points are present.",
+        "A waveform-style graphic placeholder is displayed and scales for mobile/desktop."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/marketing/sections/SimulationSection.tsx",
+          "operation": "create",
+          "description": "Create the Simulation & Proof section including the “MATLAB Simulation Results” heading, the provided bullet list, and the waveform graphic placeholder with responsive sizing."
+        },
+        {
+          "path": "frontend/public/assets/generated/matlab-waveform-placeholder.dim_1600x600.png",
+          "operation": "create",
+          "description": "Add the generated waveform-style simulation placeholder asset."
+        },
+        {
+          "path": "frontend/src/pages/SmartBreakLandingPage.tsx",
+          "operation": "modify",
+          "description": "Wire SimulationSection into the landing page in the required order and ensure it has a stable anchor id for navigation."
+        }
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "summary": "Implement Impact section with exact title, provided bullets, and strong power-infrastructure visual storytelling.",
+      "acceptanceCriteria": [
+        "Impact section title matches exactly.",
+        "All five impact bullets appear.",
+        "Section includes at least one strong visual (photo-style or illustration) consistent with power infrastructure theme."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/marketing/sections/ImpactSection.tsx",
+          "operation": "create",
+          "description": "Create the Impact section titled exactly “Impact on Society”, render the five provided bullets, and include strong visual storytelling using the generated power-infrastructure and/or impact illustration assets."
+        },
+        {
+          "path": "frontend/public/assets/generated/power-infrastructure-photo.dim_1600x900.png",
+          "operation": "create",
+          "description": "Add the generated realistic power distribution infrastructure hero/impact image asset."
+        },
+        {
+          "path": "frontend/public/assets/generated/impact-visual.dim_1600x900.png",
+          "operation": "create",
+          "description": "Add the generated impact storytelling illustration asset."
+        },
+        {
+          "path": "frontend/src/pages/SmartBreakLandingPage.tsx",
+          "operation": "modify",
+          "description": "Wire ImpactSection into the landing page in the required order and ensure it has a stable anchor id for navigation."
+        }
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "summary": "Implement About/Research Background section including the provided project context sentence and matching site styling.",
+      "acceptanceCriteria": [
+        "About/Research section is present and includes the provided sentence verbatim or as a clearly equivalent paragraph without changing meaning.",
+        "Section styling matches the rest of the page and remains readable in dark theme."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/marketing/sections/AboutSection.tsx",
+          "operation": "create",
+          "description": "Create the About/Research Background section and include the provided project context sentence (verbatim or clearly equivalent), styled consistently with the dark theme."
+        },
+        {
+          "path": "frontend/src/pages/SmartBreakLandingPage.tsx",
+          "operation": "modify",
+          "description": "Wire AboutSection into the landing page in the required order and ensure it has a stable anchor id for navigation."
+        }
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "summary": "Build the Contact section form with validation, two submit CTAs that record which CTA was used, and success/error UI states after submission.",
+      "acceptanceCriteria": [
+        "Form includes Name, Organization, Email, Message inputs with basic validation (required fields, valid email).",
+        "There are two submit buttons labeled exactly as specified; submission records which CTA was used.",
+        "On successful submit, the UI shows a clear confirmation state and resets or disables appropriately; on failure, it shows a clear error message."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/marketing/sections/ContactSection.tsx",
+          "operation": "create",
+          "description": "Create the Contact section with inputs (Name, Organization, Email, Message), basic validation, two submit buttons labeled exactly “Partner With Us” and “Request Pilot Deployment”, and success/error states. Compose inputs/buttons using shadcn-ui components (do not edit frontend/src/components/ui). Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/hooks/useCreateContactSubmission.ts",
+          "operation": "create",
+          "description": "Add a react-query mutation hook that uses useActor to call the backend createSubmission capability and passes the selected CTA type along with the form data; expose loading/error/success state to the ContactSection."
+        },
+        {
+          "path": "frontend/src/pages/SmartBreakLandingPage.tsx",
+          "operation": "modify",
+          "description": "Wire ContactSection as the final section in the page, ensure it has a stable anchor id used by Hero 'Request Demo' smooth-scroll, and ensure overall page remains single-route."
+        }
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "summary": "Add required static diagram/visual assets under public assets and render them from the frontend without backend image serving.",
+      "acceptanceCriteria": [
+        "All required visuals are included as static files under the frontend public assets directory and referenced by the UI.",
+        "No backend endpoints are used to serve images/diagrams.",
+        "Visuals render crisply on retina displays and scale appropriately across breakpoints."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/hero-grid-bg.dim_1920x1080.png",
+          "operation": "create",
+          "description": "Ensure the generated hero background visual exists as a static asset and is referenced by the Hero section UI."
+        },
+        {
+          "path": "frontend/public/assets/generated/problem-infographic.dim_1400x700.png",
+          "operation": "create",
+          "description": "Ensure the generated problem infographic exists as a static asset and is referenced by the Problem section UI."
+        },
+        {
+          "path": "frontend/public/assets/generated/solution-architecture-diagram.dim_1600x900.png",
+          "operation": "create",
+          "description": "Ensure the generated solution architecture diagram exists as a static asset and is referenced by the Our Solution section UI."
+        },
+        {
+          "path": "frontend/public/assets/generated/matlab-waveform-placeholder.dim_1600x600.png",
+          "operation": "create",
+          "description": "Ensure the generated waveform placeholder exists as a static asset and is referenced by the Simulation & Proof section UI."
+        },
+        {
+          "path": "frontend/public/assets/generated/power-infrastructure-photo.dim_1600x900.png",
+          "operation": "create",
+          "description": "Ensure the generated realistic power infrastructure image exists as a static asset and is referenced by the Impact section UI."
+        },
+        {
+          "path": "frontend/public/assets/generated/impact-visual.dim_1600x900.png",
+          "operation": "create",
+          "description": "Ensure the generated impact storytelling illustration exists as a static asset and is referenced by the Impact section UI."
+        },
+        {
+          "path": "frontend/public/assets/generated/how-it-works-icons.dim_1024x1024.png",
+          "operation": "create",
+          "description": "Ensure the generated icon sprite/set exists as a static asset and is referenced by the How It Works section UI."
+        },
+        {
+          "path": "frontend/public/assets/generated/tech-feature-icons.dim_1024x1024.png",
+          "operation": "create",
+          "description": "Ensure the generated tech feature icon sprite/set exists as a static asset and is referenced by the Technology & Innovation section UI."
+        },
+        {
+          "path": "frontend/src/components/marketing/sections/HeroSection.tsx",
+          "operation": "modify",
+          "description": "Reference the static asset frontend/public/assets/generated/hero-grid-bg.dim_1920x1080.png for the Hero background (no backend image serving)."
+        },
+        {
+          "path": "frontend/src/components/marketing/sections/ProblemSection.tsx",
+          "operation": "modify",
+          "description": "Reference the static asset frontend/public/assets/generated/problem-infographic.dim_1400x700.png for the infographic visual (no backend image serving)."
+        },
+        {
+          "path": "frontend/src/components/marketing/sections/SolutionSection.tsx",
+          "operation": "modify",
+          "description": "Reference the static asset frontend/public/assets/generated/solution-architecture-diagram.dim_1600x900.png for the architecture diagram (no backend image serving)."
+        },
+        {
+          "path": "frontend/src/components/marketing/sections/SimulationSection.tsx",
+          "operation": "modify",
+          "description": "Reference the static asset frontend/public/assets/generated/matlab-waveform-placeholder.dim_1600x600.png for the waveform placeholder (no backend image serving)."
+        },
+        {
+          "path": "frontend/src/components/marketing/sections/ImpactSection.tsx",
+          "operation": "modify",
+          "description": "Reference the static assets frontend/public/assets/generated/power-infrastructure-photo.dim_1600x900.png and/or frontend/public/assets/generated/impact-visual.dim_1600x900.png for strong visuals (no backend image serving)."
+        },
+        {
+          "path": "frontend/src/components/marketing/sections/HowItWorksSection.tsx",
+          "operation": "modify",
+          "description": "Reference the static asset frontend/public/assets/generated/how-it-works-icons.dim_1024x1024.png and use consistent icon extraction/rendering for the 6 steps (no backend image serving)."
+        },
+        {
+          "path": "frontend/src/components/marketing/sections/TechnologySection.tsx",
+          "operation": "modify",
+          "description": "Reference the static asset frontend/public/assets/generated/tech-feature-icons.dim_1024x1024.png and use consistent icon extraction/rendering for the 6 cards (no backend image serving)."
+        }
+      ]
+    }
+  ]
+}

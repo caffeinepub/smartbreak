@@ -1,0 +1,90 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-12T17:26:53.704Z",
+  "summary": "Diff adds a SmartBreak landing-page component set (Hero/Problem/Solution/How-It-Works/Technology/Simulation/Impact/About/Contact), basic in-view entrance animations, smooth-scroll usage in Hero/Header, and a backend method to create/list contact submissions. However, backend upgrade persistence is not implemented, some section headings/step text do not exactly match spec, and the backend includes additional user-profile/access-control features that were not requested.",
+  "missing_requirements": [
+    {
+      "id": "REQ-11",
+      "requirement": "About/Research Background section title and provided description text must match the spec (verbatim or clearly equivalent).",
+      "reason": "The section heading is rendered as “Research Background” rather than the requested “About/Research Background”, and the paragraph text cannot be confirmed as the provided required text (only a newly written paragraph is shown).",
+      "evidence": [
+        "frontend/src/components/marketing/sections/AboutSection.tsx"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "requirement": "How It Works section must use the exact 6 steps text provided (in order).",
+      "reason": "The step titles/descriptions are similar but not an exact match to the required phrases (e.g., 'Voltage loss detected' + 'At consumer end' vs the exact combined step text; other steps are shortened).",
+      "evidence": [
+        "frontend/src/components/marketing/sections/HowItWorksSection.tsx"
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "requirement": "Contact submissions must persist across canister upgrades using the template’s standard stable-state pattern.",
+      "reason": "Contact submissions are stored in a non-stable `var contactSubmissions = List.empty<ContactSubmission>()` with no visible `stable` storage or `preupgrade/postupgrade` logic in the shown backend file.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "User profile storage and access-controlled profile APIs (get/save profiles) added to backend.",
+      "reason": "BuildRequest is for a marketing site with a contact form; it explicitly notes no user accounts/dashboards. Backend includes user profile types and methods unrelated to contact submissions.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "description": "Admin/authorization system initialization and permission checks added around backend endpoints.",
+      "reason": "BuildRequest did not request an authorization framework; only required create + list submissions. The diff adds AccessControl/MixinAuthorization and restricts listing to admins.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "description": "Footer contains external promotional link to caffeine.ai with referral parameters.",
+      "reason": "Not requested in the BuildRequest; marketing site requirements did not mention adding third-party promotional links.",
+      "evidence": [
+        "frontend/src/components/marketing/SiteFooter.tsx"
+      ]
+    }
+  ],
+  "confidence": 0.68,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/marketing/AnimatedInView.tsx",
+    "frontend/src/components/marketing/FeatureCard.tsx",
+    "frontend/src/components/marketing/SectionShell.tsx",
+    "frontend/src/components/marketing/SiteFooter.tsx",
+    "frontend/src/components/marketing/SiteHeader.tsx",
+    "frontend/src/components/marketing/sections/AboutSection.tsx",
+    "frontend/src/components/marketing/sections/ContactSection.tsx",
+    "frontend/src/components/marketing/sections/HeroSection.tsx",
+    "frontend/src/components/marketing/sections/HowItWorksSection.tsx",
+    "frontend/src/components/marketing/sections/ImpactSection.tsx",
+    "frontend/src/components/marketing/sections/ProblemSection.tsx",
+    "frontend/src/components/marketing/sections/SimulationSection.tsx",
+    "frontend/src/components/marketing/sections/SolutionSection.tsx",
+    "frontend/src/components/marketing/sections/TechnologySection.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInViewAnimation.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/hooks/useSmoothScroll.ts",
+    "frontend/src/index.css",
+    "frontend/src/lib/utils.ts",
+    "frontend/src/main.tsx",
+    "frontend/src/pages/SmartBreakLandingPage.tsx",
+    "frontend/src/utils/urlParams.ts",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

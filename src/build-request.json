@@ -1,0 +1,294 @@
+{
+  "kind": "build_request",
+  "title": "Build SmartBreak one-page tech-startup marketing website with diagrams, animations, and contact form",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a single-page SmartBreak marketing website with 9 sections in this order: (1) Hero, (2) Problem, (3) Our Solution, (4) How It Works (6 steps), (5) Technology & Innovation, (6) Simulation & Proof, (7) Impact, (8) About/Research Background, (9) Contact.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Website Structure:\n\n1. Hero Section\n...\n9. Contact Section"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Page renders all 9 sections in the specified order on a single scrollable route (no missing sections).",
+        "Each section has a clear heading matching the provided titles/headline text (or the exact provided Hero headline).",
+        "Layout remains readable and visually coherent across mobile, tablet, and desktop breakpoints."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Implement the SmartBreak visual design system across the page: deep-tech IoT + power infrastructure look, dark-blue primary background/sections with electric-yellow accents, modern sans-serif typography, clean spacing, and professional engineering styling.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "The website should look like a deep-tech IoT + power infrastructure startup. Use a clean layout, dark-blue + electric-yellow theme, smooth animations, modern sans-serif fonts, and professional engineering visuals."
+        ]
+      },
+      "acceptanceCriteria": [
+        "All sections consistently use the dark-blue + electric-yellow palette (no random/competing accent colors).",
+        "Typography uses a modern sans-serif system with consistent heading/body scales.",
+        "Buttons, cards, and icons share a consistent style (radius, shadows/glow, borders) across sections."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Build the Hero section with the exact headline and subheadline provided, two CTA buttons (“Request Demo”, “Download Technical Brief”), and a subtle animated power grid / transmission line background visual.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Headline:\n“SmartBreak – Intelligent Detection & Automatic Isolation of Broken Power Lines”\n\nSubheadline:\nPreventing electrocution and fire hazards through real-time fault detection and automated isolation.\n\nCTA Buttons:\n• Request Demo\n• Download Technical Brief\n\nBackground:\nSubtle animated power grid / transmission line visual."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Hero displays the exact headline and subheadline text.",
+        "“Request Demo” scrolls smoothly to the Contact section.",
+        "“Download Technical Brief” downloads a local static placeholder PDF from the frontend (no backend needed).",
+        "Background includes a subtle animation effect (e.g., moving grid lines/particles) without harming readability or performance."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Implement smooth-scroll navigation behavior for in-page section jumps and add subtle on-scroll entrance animations for key section elements (headings, cards, diagrams) optimized for pitch/demo presentation.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "• Smooth scroll animation\n• Optimized for pitch/demo presentation"
+        ]
+      },
+      "acceptanceCriteria": [
+        "In-page CTA jumps use smooth scrolling.",
+        "Each major section has at least one subtle entrance animation triggered on scroll/visibility.",
+        "Animations do not block interaction and remain performant on mid-range laptops and mobile devices."
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Build the Problem section titled “The Hidden Danger in LV Distribution Networks” with the provided bullet points and an infographic-style visual showing: Broken conductor → Live wire → Public danger.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "2. Problem Section\nTitle: “The Hidden Danger in LV Distribution Networks”\n\nContent points:\n• Frequent snapping of LV overhead conductors\n• Fallen wires remain energized\n• High risk of electrocution and fire\n• Existing relays cannot detect open conductor faults\n• Rural areas lack advanced SCADA systems\n\nInclude an infographic-style visual showing:\nBroken conductor → Live wire → Public danger"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Problem section heading matches the provided title.",
+        "All listed bullet points are present and readable.",
+        "Infographic-style visual clearly shows the 3-step chain with arrows in the specified order."
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Build the Our Solution section titled “The SmartBreak Solution” including the provided explanation bullets and a simple system architecture diagram showing: Consumer Unit → RF Communication → Transformer Control Unit → Isolation Actuator → SMS Alert.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "3. Our Solution Section\nTitle: “The SmartBreak Solution”\n\nExplain:\nSmartBreak is a low-cost, retrofit-friendly intelligent system that:\n\n• Detects conductor break in real time  \n• Uses multi-consumer validation logic  \n• Automatically trips isolator  \n• Sends GSM/LoRa remote alerts  \n\nInclude a simple system architecture diagram showing:\nConsumer Unit → RF Communication → Transformer Control Unit → Isolation Actuator → SMS Alert"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Solution section includes all provided bullet points.",
+        "Architecture diagram displays the 5 nodes in the specified order with arrows connecting them.",
+        "Diagram remains legible on mobile (stacks or scrolls horizontally gracefully)."
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Build the How It Works section as a 6-step horizontal flow using icons and clean layout, with these exact steps: (1) Conductor snaps, (2) Voltage loss detected at consumer end, (3) Battery-powered alert transmitted, (4) Transformer unit validates multiple alerts, (5) Isolation actuator triggered, (6) SMS notification sent to control room.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "4. How It Works Section (Step-by-Step)\nCreate 6 visual steps:\n\n1. Conductor snaps\n2. Voltage loss detected at consumer end\n3. Battery-powered alert transmitted\n4. Transformer unit validates multiple alerts\n5. Isolation actuator triggered\n6. SMS notification sent to control room\n\nUse icons and clean horizontal flow design."
+        ]
+      },
+      "acceptanceCriteria": [
+        "All 6 steps appear in the correct order with icons.",
+        "On desktop the layout reads as a left-to-right flow; on mobile it degrades to a vertical stepper without losing the step order.",
+        "Icons and connectors/arrows are consistent in style with the rest of the site."
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Build the Technology & Innovation section using tech-style cards with icons for each listed highlight: multi-point validation logic, false alarm reduction algorithm, AI-ready fault classification, predictive monitoring (thermal + vibration sensors), GPS-based fault localization, solar-assisted backup system.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "5. Technology & Innovation Section\n\nHighlight:\n• Multi-point validation logic\n• False alarm reduction algorithm\n• AI-ready fault classification\n• Predictive monitoring (thermal + vibration sensors)\n• GPS-based fault localization\n• Solar-assisted backup system\n\nUse tech-style cards with icons."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Six cards are displayed, one per highlight, each with an icon and label.",
+        "Cards are responsive (grid layout adapting across breakpoints).",
+        "Card styling fits the dark-blue + electric-yellow theme and is consistent across the site."
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "text": "Build the Simulation & Proof section showing “MATLAB Simulation Results” and the provided content bullets, including a waveform-style graphic placeholder.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "6. Simulation & Proof Section\n\nShow:\n“MATLAB Simulation Results”\n\nContent:\n• 230V, 50Hz AC system simulated\n• Fault introduced at 0.5 seconds\n• Voltage collapse detected\n• Trip signal activated\n• Zero false triggering\n\nInclude a waveform-style graphic placeholder."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Section heading includes “MATLAB Simulation Results”.",
+        "All simulation bullet points are present.",
+        "A waveform-style graphic placeholder is displayed and scales for mobile/desktop."
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "text": "Build the Impact section titled “Impact on Society” with the provided bullets and strong visual storytelling using realistic power infrastructure imagery.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "7. Impact Section\n\nTitle: “Impact on Society”\n\n• Saves human lives\n• Prevents livestock deaths\n• Reduces fire hazards\n• Improves rural grid reliability\n• Cost-effective large-scale deployment\n\nUse strong visual storytelling.\n...\n• Use realistic power infrastructure imagery"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Impact section title matches exactly.",
+        "All five impact bullets appear.",
+        "Section includes at least one strong visual (photo-style or illustration) consistent with power infrastructure theme."
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "text": "Build the About/Research Background section including the provided description text about the project’s purpose and context.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "8. About / Research Background Section\n\nInclude:\nDeveloped as an innovative electrical safety project focused on enhancing LV distribution protection without requiring full smart grid transformation."
+        ]
+      },
+      "acceptanceCriteria": [
+        "About/Research section is present and includes the provided sentence verbatim or as a clearly equivalent paragraph without changing meaning.",
+        "Section styling matches the rest of the page and remains readable in dark theme."
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "text": "Build the Contact section with a form containing fields: Name, Organization, Email, Message, and include two CTAs labeled “Partner With Us” and “Request Pilot Deployment”. Submitting either CTA should submit the form along with which CTA was chosen and show a success/error state.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "9. Contact Section\n\nFields:\nName\nOrganization\nEmail\nMessage\n\nCTA:\n“Partner With Us”\n“Request Pilot Deployment”"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Form includes Name, Organization, Email, Message inputs with basic validation (required fields, valid email).",
+        "There are two submit buttons labeled exactly as specified; submission records which CTA was used.",
+        "On successful submit, the UI shows a clear confirmation state and resets or disables appropriately; on failure, it shows a clear error message."
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "text": "Implement backend persistence for contact submissions in the single Motoko actor, including a method to create a submission and a method to list submissions (for future internal review). Store timestamp, name, organization, email, message, and selected CTA.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Contact Section\n\nFields:\nName\nOrganization\nEmail\nMessage\n\nCTA:\n“Partner With Us”\n“Request Pilot Deployment”"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Backend exposes an update call to create/store a contact submission containing: timestamp, name, organization, email, message, and CTA type.",
+        "Backend exposes a query call to list stored submissions.",
+        "Submissions persist across canister upgrades according to the template’s standard stable-state pattern (no data loss in normal upgrade flow)."
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "text": "Add static assets for placeholder diagrams/visuals and ensure the frontend renders them from the static public assets path (not via the backend). Include: hero background visual, problem infographic, solution architecture diagram, waveform graphic, and at least one power-infrastructure hero/impact visual.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "• Include placeholder diagrams\n• Use realistic power infrastructure imagery\nBackground:\nSubtle animated power grid / transmission line visual.\n\nInclude an infographic-style visual...\n\nInclude a simple system architecture diagram...\n\nInclude a waveform-style graphic placeholder."
+        ]
+      },
+      "acceptanceCriteria": [
+        "All required visuals are included as static files under the frontend public assets directory and referenced by the UI.",
+        "No backend endpoints are used to serve images/diagrams.",
+        "Visuals render crisply on retina displays and scale appropriately across breakpoints."
+      ]
+    }
+  ],
+  "constraints": [
+    "Backend must remain a single Motoko actor (all logic in the main actor file).",
+    "Do not edit files under frontend/src/components/ui (compose them instead).",
+    "Do not edit files under frontend/src/hooks/useInternetIdentity.ts or .tsx, frontend/src/hooks/useActor.ts, or frontend/src/main.tsx.",
+    "No third-party authentication beyond Internet Identity (not required for this marketing site)."
+  ],
+  "nonGoals": [
+    "Do not implement real-time features (no websockets/chat).",
+    "Do not integrate external email/SMS services; contact submissions should be stored in-canister only.",
+    "Do not build a multi-page CMS/admin UI for viewing submissions (backend listing endpoint only is sufficient).",
+    "Do not add complex product dashboards or user accounts; this is a marketing/pitch website only."
+  ],
+  "imageRequirements": {
+    "required": [
+      "Subtle animated-style power grid / transmission line background illustration, dark-tech aesthetic (hero-grid-bg.dim_1920x1080.png)",
+      "Infographic illustration: broken conductor leading to live wire leading to public danger, with arrows and simple icons (problem-infographic.dim_1400x700.png)",
+      "System architecture diagram with labeled blocks and arrows: Consumer Unit, RF Communication, Transformer Control Unit, Isolation Actuator, SMS Alert (solution-architecture-diagram.dim_1600x900.png)",
+      "Waveform-style simulation graphic placeholder (matlab-waveform-placeholder.dim_1600x600.png)",
+      "Realistic power distribution infrastructure hero image, night/dark, high-tech mood (power-infrastructure-photo.dim_1600x900.png)",
+      "Impact storytelling illustration showing safer rural distribution network / protected community near power lines, professional engineering style (impact-visual.dim_1600x900.png)",
+      "Set of 6 consistent line icons for the How It Works steps (how-it-works-icons.dim_1024x1024.png)",
+      "Set of 6 consistent tech feature line icons for Technology & Innovation cards (tech-feature-icons.dim_1024x1024.png)"
+    ],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}

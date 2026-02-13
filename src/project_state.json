@@ -1,0 +1,204 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Build a modern, professional tech-startup marketing website for “SmartBreak,” a smart electrical safety solution for real-time detection and automatic isolation of broken LV overhead conductors, using a dark-blue + electric-yellow theme, smooth animations, and engineering-focused visuals.",
+  "architectural_notes": [
+    "Single-page responsive marketing site with smooth-scroll animations and reusable section components.",
+    "Use placeholder/inline SVG diagrams for infographic, system architecture, and waveform graphics; use realistic power-infrastructure imagery where applicable."
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Subtle animated-style power grid / transmission line background illustration, dark-tech aesthetic (hero-grid-bg.dim_1920x1080.png)\n- Infographic illustration: broken conductor leading to live wire leading to public danger, with arrows and simple icons (problem-infographic.dim_1400x700.png)\n- System architecture diagram with labeled blocks and arrows: Consumer Unit, RF Communication, Transformer Control Unit, Isolation Actuator, SMS Alert (solution-architecture-diagram.dim_1600x900.png)\n- Waveform-style simulation graphic placeholder (matlab-waveform-placeholder.dim_1600x600.png)\n- Realistic power distribution infrastructure hero image, night/dark, high-tech mood (power-infrastructure-photo.dim_1600x900.png)\n- Impact storytelling illustration showing safer rural distribution network / protected community near power lines, professional engineering style (impact-visual.dim_1600x900.png)\n- Set of 6 consistent line icons for the How It Works steps (how-it-works-icons.dim_1024x1024.png)\n- Set of 6 consistent tech feature line icons for Technology & Innovation cards (tech-feature-icons.dim_1024x1024.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-single-page-smartbreak-marketing-website-with-9-sections-in-this-order-1-hero-2-problem-3-our-solution-4-how-it-works-6-steps-5-technology-innovation-6-simulation-proof-7-impact-8-about-research-background-9-contact",
+      "title": "Create a single-page SmartBreak marketing website with 9 sections in this order: (1) Hero, (2) Problem, (3) Our Solution, (4) How It Works (6 steps), (5) Technology & Innovation, (6) Simulation & Proof, (7) Impact, (8) About/Research Background, (9) Contact.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-the-smartbreak-visual-design-system-across-the-page-deep-tech-iot-power-infrastructure-look-dark-blue-primary-background-sections-with-electric-yellow-accents-modern-sans-serif-typography-clean-spacing-and-professional-engineering-styling",
+      "title": "Implement the SmartBreak visual design system across the page: deep-tech IoT + power infrastructure look, dark-blue primary background/sections with electric-yellow accents, modern sans-serif typography, clean spacing, and professional engineering styling.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-the-hero-section-with-the-exact-headline-and-subheadline-provided-two-cta-buttons-request-demo-download-technical-brief-and-a-subtle-animated-power-grid-transmission-line-background-visual",
+      "title": "Build the Hero section with the exact headline and subheadline provided, two CTA buttons (“Request Demo”, “Download Technical Brief”), and a subtle animated power grid / transmission line background visual.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-smooth-scroll-navigation-behavior-for-in-page-section-jumps-and-add-subtle-on-scroll-entrance-animations-for-key-section-elements-headings-cards-diagrams-optimized-for-pitch-demo-presentation",
+      "title": "Implement smooth-scroll navigation behavior for in-page section jumps and add subtle on-scroll entrance animations for key section elements (headings, cards, diagrams) optimized for pitch/demo presentation.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-the-problem-section-titled-the-hidden-danger-in-lv-distribution-networks-with-the-provided-bullet-points-and-an-infographic-style-visual-showing-broken-conductor-live-wire-public-danger",
+      "title": "Build the Problem section titled “The Hidden Danger in LV Distribution Networks” with the provided bullet points and an infographic-style visual showing: Broken conductor → Live wire → Public danger.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-the-our-solution-section-titled-the-smartbreak-solution-including-the-provided-explanation-bullets-and-a-simple-system-architecture-diagram-showing-consumer-unit-rf-communication-transformer-control-unit-isolation-actuator-sms-alert",
+      "title": "Build the Our Solution section titled “The SmartBreak Solution” including the provided explanation bullets and a simple system architecture diagram showing: Consumer Unit → RF Communication → Transformer Control Unit → Isolation Actuator → SMS Alert.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-the-how-it-works-section-as-a-6-step-horizontal-flow-using-icons-and-clean-layout-with-these-exact-steps-1-conductor-snaps-2-voltage-loss-detected-at-consumer-end-3-battery-powered-alert-transmitted-4-transformer-unit-validates-multiple-alerts-5-isolation-actuator-triggered-6-sms-notification-sent-to-control-room",
+      "title": "Build the How It Works section as a 6-step horizontal flow using icons and clean layout, with these exact steps: (1) Conductor snaps, (2) Voltage loss detected at consumer end, (3) Battery-powered alert transmitted, (4) Transformer unit validates multiple alerts, (5) Isolation actuator triggered, (6) SMS notification sent to control room.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-the-technology-innovation-section-using-tech-style-cards-with-icons-for-each-listed-highlight-multi-point-validation-logic-false-alarm-reduction-algorithm-ai-ready-fault-classification-predictive-monitoring-thermal-vibration-sensors-gps-based-fault-localization-solar-assisted-backup-system",
+      "title": "Build the Technology & Innovation section using tech-style cards with icons for each listed highlight: multi-point validation logic, false alarm reduction algorithm, AI-ready fault classification, predictive monitoring (thermal + vibration sensors), GPS-based fault localization, solar-assisted backup system.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-the-simulation-proof-section-showing-matlab-simulation-results-and-the-provided-content-bullets-including-a-waveform-style-graphic-placeholder",
+      "title": "Build the Simulation & Proof section showing “MATLAB Simulation Results” and the provided content bullets, including a waveform-style graphic placeholder.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-the-impact-section-titled-impact-on-society-with-the-provided-bullets-and-strong-visual-storytelling-using-realistic-power-infrastructure-imagery",
+      "title": "Build the Impact section titled “Impact on Society” with the provided bullets and strong visual storytelling using realistic power infrastructure imagery.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-the-about-research-background-section-including-the-provided-description-text-about-the-project-s-purpose-and-context",
+      "title": "Build the About/Research Background section including the provided description text about the project’s purpose and context.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-the-contact-section-with-a-form-containing-fields-name-organization-email-message-and-include-two-ctas-labeled-partner-with-us-and-request-pilot-deployment-submitting-either-cta-should-submit-the-form-along-with-which-cta-was-chosen-and-show-a-success-error-state",
+      "title": "Build the Contact section with a form containing fields: Name, Organization, Email, Message, and include two CTAs labeled “Partner With Us” and “Request Pilot Deployment”. Submitting either CTA should submit the form along with which CTA was chosen and show a success/error state.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-static-assets-for-placeholder-diagrams-visuals-and-ensure-the-frontend-renders-them-from-the-static-public-assets-path-not-via-the-backend-include-hero-background-visual-problem-infographic-solution-architecture-diagram-waveform-graphic-and-at-least-one-power-infrastructure-hero-impact-visual",
+      "title": "Add static assets for placeholder diagrams/visuals and ensure the frontend renders them from the static public assets path (not via the backend). Include: hero background visual, problem infographic, solution architecture diagram, waveform graphic, and at least one power-infrastructure hero/impact visual.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create SmartBreak one-page marketing website with specified 9-section structure (Hero, Problem, Solution, How It Works, Technology, Simulation, Impact, About, Contact)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Implement hero section with headline/subheadline, CTAs (Request Demo, Download Technical Brief), and subtle animated power grid background visual",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Add Problem section with key bullet points and infographic-style visual (Broken conductor → Live wire → Public danger)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Add Our Solution section with explanation bullets and a simple system architecture diagram (Consumer Unit → RF → Transformer Control Unit → Isolation Actuator → SMS Alert)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Add How It Works section with 6-step horizontal flow using icons",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Add Technology & Innovation section using tech-style cards with icons for listed capabilities",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Add Simulation & Proof section featuring MATLAB simulation results and waveform-style graphic placeholder",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Add Impact on Society section with visual storytelling and listed impact bullets",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Add About/Research Background section describing project context and purpose",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Add Contact section with form fields (Name, Organization, Email, Message) and CTAs (Partner With Us, Request Pilot Deployment)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-11",
+      "summary": "Apply overall visual design: deep-tech IoT + power infrastructure styling, dark-blue + electric-yellow palette, modern sans-serif fonts, clean layout, and professional engineering visuals",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-12",
+      "summary": "Ensure fully responsive design, smooth scrolling animations, and pitch/demo optimized performance with placeholder diagrams and realistic power infrastructure imagery",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-25",
+      "summary": "Implement backend persistence for contact submissions in the single Motoko actor, including a method to create a submission and a method to list submissions (for future internal review). Store timestamp, name, organization, email, message, and selected CTA.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "SmartBreak",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

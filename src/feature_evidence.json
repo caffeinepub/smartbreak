@@ -1,0 +1,284 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-single-page-smartbreak-marketing-website-with-9-sections-in-this-order-1-hero-2-problem-3-our-solution-4-how-it-works-6-steps-5-technology-innovation-6-simulation-proof-7-impact-8-about-research-background-9-contact",
+      "featureTitle": "Create a single-page SmartBreak marketing website with 9 sections in this order: (1) Hero, (2) Problem, (3) Our Solution, (4) How It Works (6 steps), (5) Technology & Innovation, (6) Simulation & Proof, (7) Impact, (8) About/Research Background, (9) Contact.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/marketing/SectionShell.tsx",
+        "frontend/src/components/marketing/SiteHeader.tsx",
+        "frontend/src/pages/SmartBreakLandingPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-the-smartbreak-visual-design-system-across-the-page-deep-tech-iot-power-infrastructure-look-dark-blue-primary-background-sections-with-electric-yellow-accents-modern-sans-serif-typography-clean-spacing-and-professional-engineering-styling",
+      "featureTitle": "Implement the SmartBreak visual design system across the page: deep-tech IoT + power infrastructure look, dark-blue primary background/sections with electric-yellow accents, modern sans-serif typography, clean spacing, and professional engineering styling.",
+      "files": [
+        "frontend/src/components/marketing/FeatureCard.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-hero-section-with-the-exact-headline-and-subheadline-provided-two-cta-buttons-request-demo-download-technical-brief-and-a-subtle-animated-power-grid-transmission-line-background-visual",
+      "featureTitle": "Build the Hero section with the exact headline and subheadline provided, two CTA buttons (“Request Demo”, “Download Technical Brief”), and a subtle animated power grid / transmission line background visual.",
+      "files": [
+        "frontend/src/components/marketing/sections/HeroSection.tsx",
+        "frontend/src/pages/SmartBreakLandingPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-smooth-scroll-navigation-behavior-for-in-page-section-jumps-and-add-subtle-on-scroll-entrance-animations-for-key-section-elements-headings-cards-diagrams-optimized-for-pitch-demo-presentation",
+      "featureTitle": "Implement smooth-scroll navigation behavior for in-page section jumps and add subtle on-scroll entrance animations for key section elements (headings, cards, diagrams) optimized for pitch/demo presentation.",
+      "files": [
+        "frontend/src/components/marketing/AnimatedInView.tsx",
+        "frontend/src/components/marketing/SiteHeader.tsx",
+        "frontend/src/components/marketing/sections/AboutSection.tsx",
+        "frontend/src/components/marketing/sections/ContactSection.tsx",
+        "frontend/src/components/marketing/sections/HeroSection.tsx",
+        "frontend/src/components/marketing/sections/HowItWorksSection.tsx",
+        "frontend/src/components/marketing/sections/ImpactSection.tsx",
+        "frontend/src/components/marketing/sections/ProblemSection.tsx",
+        "frontend/src/components/marketing/sections/SimulationSection.tsx",
+        "frontend/src/components/marketing/sections/SolutionSection.tsx",
+        "frontend/src/components/marketing/sections/TechnologySection.tsx",
+        "frontend/src/hooks/useInViewAnimation.ts",
+        "frontend/src/hooks/useSmoothScroll.ts"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-problem-section-titled-the-hidden-danger-in-lv-distribution-networks-with-the-provided-bullet-points-and-an-infographic-style-visual-showing-broken-conductor-live-wire-public-danger",
+      "featureTitle": "Build the Problem section titled “The Hidden Danger in LV Distribution Networks” with the provided bullet points and an infographic-style visual showing: Broken conductor → Live wire → Public danger.",
+      "files": [
+        "frontend/src/components/marketing/sections/ProblemSection.tsx",
+        "frontend/src/pages/SmartBreakLandingPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-our-solution-section-titled-the-smartbreak-solution-including-the-provided-explanation-bullets-and-a-simple-system-architecture-diagram-showing-consumer-unit-rf-communication-transformer-control-unit-isolation-actuator-sms-alert",
+      "featureTitle": "Build the Our Solution section titled “The SmartBreak Solution” including the provided explanation bullets and a simple system architecture diagram showing: Consumer Unit → RF Communication → Transformer Control Unit → Isolation Actuator → SMS Alert.",
+      "files": [
+        "frontend/src/components/marketing/sections/SolutionSection.tsx",
+        "frontend/src/pages/SmartBreakLandingPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-how-it-works-section-as-a-6-step-horizontal-flow-using-icons-and-clean-layout-with-these-exact-steps-1-conductor-snaps-2-voltage-loss-detected-at-consumer-end-3-battery-powered-alert-transmitted-4-transformer-unit-validates-multiple-alerts-5-isolation-actuator-triggered-6-sms-notification-sent-to-control-room",
+      "featureTitle": "Build the How It Works section as a 6-step horizontal flow using icons and clean layout, with these exact steps: (1) Conductor snaps, (2) Voltage loss detected at consumer end, (3) Battery-powered alert transmitted, (4) Transformer unit validates multiple alerts, (5) Isolation actuator triggered, (6) SMS notification sent to control room.",
+      "files": [
+        "frontend/src/components/marketing/sections/HowItWorksSection.tsx",
+        "frontend/src/pages/SmartBreakLandingPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-technology-innovation-section-using-tech-style-cards-with-icons-for-each-listed-highlight-multi-point-validation-logic-false-alarm-reduction-algorithm-ai-ready-fault-classification-predictive-monitoring-thermal-vibration-sensors-gps-based-fault-localization-solar-assisted-backup-system",
+      "featureTitle": "Build the Technology & Innovation section using tech-style cards with icons for each listed highlight: multi-point validation logic, false alarm reduction algorithm, AI-ready fault classification, predictive monitoring (thermal + vibration sensors), GPS-based fault localization, solar-assisted backup system.",
+      "files": [
+        "frontend/src/components/marketing/sections/TechnologySection.tsx",
+        "frontend/src/pages/SmartBreakLandingPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-simulation-proof-section-showing-matlab-simulation-results-and-the-provided-content-bullets-including-a-waveform-style-graphic-placeholder",
+      "featureTitle": "Build the Simulation & Proof section showing “MATLAB Simulation Results” and the provided content bullets, including a waveform-style graphic placeholder.",
+      "files": [
+        "frontend/src/components/marketing/sections/SimulationSection.tsx",
+        "frontend/src/pages/SmartBreakLandingPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-9"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-impact-section-titled-impact-on-society-with-the-provided-bullets-and-strong-visual-storytelling-using-realistic-power-infrastructure-imagery",
+      "featureTitle": "Build the Impact section titled “Impact on Society” with the provided bullets and strong visual storytelling using realistic power infrastructure imagery.",
+      "files": [
+        "frontend/src/components/marketing/sections/ImpactSection.tsx",
+        "frontend/src/pages/SmartBreakLandingPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-10"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-about-research-background-section-including-the-provided-description-text-about-the-project-s-purpose-and-context",
+      "featureTitle": "Build the About/Research Background section including the provided description text about the project’s purpose and context.",
+      "files": [
+        "frontend/src/components/marketing/sections/AboutSection.tsx",
+        "frontend/src/pages/SmartBreakLandingPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-11"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-contact-section-with-a-form-containing-fields-name-organization-email-message-and-include-two-ctas-labeled-partner-with-us-and-request-pilot-deployment-submitting-either-cta-should-submit-the-form-along-with-which-cta-was-chosen-and-show-a-success-error-state",
+      "featureTitle": "Build the Contact section with a form containing fields: Name, Organization, Email, Message, and include two CTAs labeled “Partner With Us” and “Request Pilot Deployment”. Submitting either CTA should submit the form along with which CTA was chosen and show a success/error state.",
+      "files": [
+        "frontend/src/components/marketing/sections/ContactSection.tsx",
+        "frontend/src/pages/SmartBreakLandingPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-12"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-static-assets-for-placeholder-diagrams-visuals-and-ensure-the-frontend-renders-them-from-the-static-public-assets-path-not-via-the-backend-include-hero-background-visual-problem-infographic-solution-architecture-diagram-waveform-graphic-and-at-least-one-power-infrastructure-hero-impact-visual",
+      "featureTitle": "Add static assets for placeholder diagrams/visuals and ensure the frontend renders them from the static public assets path (not via the backend). Include: hero background visual, problem infographic, solution architecture diagram, waveform graphic, and at least one power-infrastructure hero/impact visual.",
+      "files": [
+        "frontend/src/components/marketing/sections/HeroSection.tsx",
+        "frontend/src/components/marketing/sections/HowItWorksSection.tsx",
+        "frontend/src/components/marketing/sections/ImpactSection.tsx",
+        "frontend/src/components/marketing/sections/ProblemSection.tsx",
+        "frontend/src/components/marketing/sections/SimulationSection.tsx",
+        "frontend/src/components/marketing/sections/SolutionSection.tsx",
+        "frontend/src/components/marketing/sections/TechnologySection.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-14"
+      ],
+      "confidence": "high"
+    }
+  ]
+}
